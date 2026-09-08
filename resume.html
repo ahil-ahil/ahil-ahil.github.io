@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahil Vp - Resume</title>
+  <meta name="description" content="Resume of Ahil Vp - Electronics & Communication Engineering Student, Kumaraguru College of Technology" />
+
+  <!-- Clean, highly legible ATS-compliant typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ATS Optimization Rules */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #111827;
+      background-color: #f8fafc;
+      line-height: 1.5;
+      font-size: 10.5pt;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Resume Container (A4 / Standard Letter width) */
+    .resume-container {
+      max-width: 820px;
+      margin: 24px auto;
+      padding: 36px 44px;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 6px;
+    }
+
+    /* Print / ATS Bar */
+    .action-bar {
+      max-width: 820px;
+      margin: 16px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #1e1b4b;
+      color: #ffffff;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .btn-print {
+      background: #8b5cf6;
+      color: #ffffff;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-print:hover {
+      background: #7c3aed;
+    }
+
+    .btn-back {
+      color: #c7d2fe;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-back:hover {
+      color: #ffffff;
+    }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 14px;
+    }
+
+    .header h1 {
+      font-size: 26pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      font-size: 10pt;
+      color: #334155;
+    }
+
+    .contact-info a {
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+      color: #7c3aed;
+    }
+
+    .separator {
+      color: #94a3b8;
+    }
+
+    /* Section Styling */
+    section {
+      margin-top: 18px;
+    }
+
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    .entry {
+      margin-bottom: 14px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .entry-subtitle {
+      font-size: 10pt;
+      font-style: italic;
+      color: #475569;
+    }
+
+    .entry-date {
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #64748b;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-top: 4px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+
+    /* Skills List */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      row-gap: 6px;
+      column-gap: 12px;
+      font-size: 10pt;
+    }
+
+    .skill-category {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .skill-items {
+      color: #334155;
+    }
+
+    /* ATS Mandatory Print Directives */
+    @media print {
+      @page {
+        margin: 15mm;
+        size: auto;
+      }
+      
+      header, footer, .action-bar, .no-print {
+        display: none !important;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10pt;
+      }
+
+      .resume-container {
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+
+      a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+
+      h1 {
+        color: #000000 !important;
+      }
+
+      h2 {
+        border-bottom: 1px solid #000000 !important;
+        color: #000000 !important;
+      }
+
+      .entry-title {
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Bar (hidden when printing) -->
+  <div class="action-bar no-print">
+    <a href="index.html" class="btn-back">
+      &larr; Back to Portfolio
+    </a>
+    <span><strong>ATS-Optimized Resume View</strong> (Standard 15mm margin preconfigured)</span>
+    <button class="btn-print" onclick="window.print()">
+      🖨️ Print / Save to PDF
+    </button>
+  </div>
+
+  <main class="resume-container">
+    <!-- HEADER -->
+    <header class="header">
+      <h1>Ahil Vp</h1>
+      <div class="contact-info">
+        <span>+91 7700045999</span>
+        <span class="separator">|</span>
+        <a href="mailto:ahilvp2323@gmail.com">ahilvp2323@gmail.com</a>
+        <span class="separator">|</span>
+        <a href="https://www.linkedin.com/in/ahil-prakash-6b69a142a" target="_blank">linkedin.com/in/ahil-prakash-6b69a142a</a>
+        <span class="separator">|</span>
+        <a href="https://github.com/ahil-ahil" target="_blank">github.com/ahil-ahil</a>
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        Third-year Electronics & Communication Engineering undergraduate at Kumaraguru College of Technology with a strong foundation in hardware description (Verilog HDL), logic synthesis (Xilinx Vivado), digital signal processing (MATLAB), and product prototyping. Adept at collaborative problem-solving, rapid prototyping through ProtoSem Forge, and developing intelligent software tools. Seeking engineering internship opportunities to contribute practical technical expertise.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Kumaraguru College of Technology</span>
+          <span class="entry-date">2023 – Present (Third Year)</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Bachelor of Engineering in Electronics & Communication Engineering</span>
+          <span class="entry-date">CGPA: 7.5 / 10.0</span>
+        </div>
+        <p style="font-size: 9.5pt; color: #475569; margin-top: 4px;">
+          Relevant Coursework: Digital System Design, Signals and Systems, Microprocessors & Microcontrollers, Linear Integrated Circuits, Computer Architecture, Electronic Circuits.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <h2>Experience & Fellowships</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">ProtoSem / ProtoSem Forge</span>
+          <span class="entry-date">2024 – Present</span>
+        </div>
+        <div class="entry-subtitle">Product Development & Prototyping Fellow</div>
+        <ul>
+          <li>Engaged in end-to-end product development initiatives, technical brainstorming, and proof-of-concept hardware prototypes.</li>
+          <li>Prepared structured technical presentations, system requirement breakdowns, and design reviews for engineering problem statements.</li>
+          <li>Applied user-centric engineering methodologies to translate theoretical hardware and software concepts into viable functional models.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Technical Projects</h2>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">AI-Based Resume Enhancer Tool</span>
+          <span class="entry-date">Academic Project</span>
+        </div>
+        <div class="entry-subtitle">Technologies: Python, Natural Language Processing (NLP), AI Text Models</div>
+        <ul>
+          <li>Engineered an automated resume analysis tool designed to parse resume text, identify keyword deficiencies, and provide contextual improvement suggestions.</li>
+          <li>Implemented ATS-focused keyword scoring algorithms to align applicant experience against specific technical role benchmarks.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Digital Signal Processing (DSP) Simulation Suite</span>
+          <span class="entry-date">Laboratory Project</span>
+        </div>
+        <div class="entry-subtitle">Technologies: MATLAB, Signal Processing Toolbox</div>
+        <ul>
+          <li>Formulated and simulated discrete-time signals, Fourier transform representations, and frequency response characteristics.</li>
+          <li>Designed and tested Finite Impulse Response (FIR) and Infinite Impulse Response (IIR) digital filters for signal attenuation and noise filtering.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Verilog Half Adder & Digital Logic Synthesis</span>
+          <span class="entry-date">Digital Design Project</span>
+        </div>
+        <div class="entry-subtitle">Technologies: Verilog HDL, Xilinx Vivado Suite</div>
+        <ul>
+          <li>Modeled combinational logic architectures in Verilog HDL, including half adder, full adder, and logic gate arrays.</li>
+          <li>Generated simulation testbenches and validated timing waveforms and functional behavioral compliance in Xilinx Vivado.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">Hardware & EDA:</div>
+        <div class="skill-items">Verilog HDL, Xilinx Vivado, Digital System Design, FPGA Simulation, Embedded Systems</div>
+
+        <div class="skill-category">Simulation & Tools:</div>
+        <div class="skill-items">MATLAB, Digital Signal Processing (DSP), Simulink, Git & GitHub</div>
+
+        <div class="skill-category">Programming:</div>
+        <div class="skill-items">C, Python</div>
+
+        <div class="skill-category">Core Competencies:</div>
+        <div class="skill-items">Product Prototyping, Logic Synthesis, Technical Presentation, Problem-Solving</div>
+      </div>
+    </section>
+
+    <!-- INTERESTS -->
+    <section>
+      <h2>Interests</h2>
+      <p>
+        Embedded Systems Design • Digital Logic & FPGA Engineering • Product Development • Signal Processing • Emerging AI Technologies
+      </p>
+    </section>
+  </main>
+
+</body>
+</html>
